@@ -1,0 +1,24 @@
+def get_name(student_info, target_no):
+    # 딕셔너리에 번호가 존재하면 그 이름 반환
+    if target_no in student_info:
+        return student_info[target_no]
+    else:
+        # 없으면 물음표 반환
+        return "?"
+    
+
+# 예시 사용
+sample_info = {
+    39: "Justin",
+    14: "John",
+    67: "Mike",
+    105: "Summer"
+}
+
+print(get_name(sample_info, 105))   # Summer
+print(get_name(sample_info, 777))   # ?
+
+# 코드 설명
+# 1) in을 사용해 딕셔너리에 키가 존재하는지 빠르게 확인한다.
+# 2) 존재하면 value(이름) 반환
+# 3) 존재하지 않으면 "?" 반환 -> 딕셔너리 탐색은 O(1)이라 매우 빠름.
